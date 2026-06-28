@@ -15,6 +15,7 @@ The project applies the method to the `Couple` dataset, which is used to analyze
 ## Repository Files
 
 - `ZIGP-project.Rmd` - Main report and analysis source
+- `ZIGP-project.pdf` - Rendered PDF report
 - `data.txt` - Data used by the report
 
 The standalone `ZIGP-project.R` script was removed so the R Markdown report is the single source for the written analysis and code.
