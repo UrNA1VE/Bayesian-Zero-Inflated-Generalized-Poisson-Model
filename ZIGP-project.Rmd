@@ -115,7 +115,7 @@ library(mvtnorm)
 library(HDInterval)
 knitr::opts_chunk$set(fig.width=6, fig.height=4) 
 # read data and initialization
-# df = read.table("data.txt", header = TRUE)
+df = read.table("data.txt", header = TRUE)
 idx0 = df[, 1] == 0
 X = cbind(1, as.matrix(df[, 2:3]))
 Y = c(df[, 1])
@@ -580,7 +580,7 @@ library(mvtnorm)
 library(HDInterval)
 knitr::opts_chunk$set(fig.width=6, fig.height=4) 
 # read data and initialization
-df = read.table("~/Desktop/Courses/619/project/data.txt", header = TRUE)
+df = read.table("data.txt", header = TRUE)
 idx0 = df[, 1] == 0
 X = cbind(1, as.matrix(df[, 2:3]))
 Y = c(df[, 1])
@@ -914,5 +914,3 @@ plot(1:387, ks_p, type = "l", xlab = "i", ylab = "K-L divergence", ylim = c(0, 2
 plot(1:387, ks_gp, type = "l", xlab = "i", ylab = "K-L divergence", ylim = c(0, 2.5), main = "Figure5. ")
 knitr::kable(table4, caption = "Table4. Most influential case")
 ```
-
-

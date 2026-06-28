@@ -1,3 +1,38 @@
-# Bayesian zero-inflated generalized Poisson regression model: estimation and case influence diagnostics
+# Bayesian Zero-Inflated Generalized Poisson Model
 
-In this project, we mainly study the zero-inflated generalized Poisson (ZIGP) regression model and examine its analysis from a Bayesian point of view by using Markov Chain Monte Carlo methods. This model offers a way of modelling the excess zeros in addition to avoiding the over dispersed or under dispersed relative to Poisson. Meanwhile, the model selection criteria and Bayesian case influence diagnostics based on the Kullback-Leibler divergence are studied. Furthermore, to illustrate the performance of the developed methodology we apply the real word examples, we select the data set “Couple” to analyze. The author of the original literature gave results of the analysis but the code and the tools about the analysis are unpublished and private. In our study,we use R program to analysis the same data set and approach the similar results in the end.
+This project studies a Bayesian zero-inflated generalized Poisson (ZIGP) regression model for count data with excess zeros and non-Poisson dispersion. The analysis implements the model estimation, model comparison, and case influence diagnostics in R using Markov Chain Monte Carlo methods.
+
+The project applies the method to the `Couple` dataset, which is used to analyze unwanted pursuit behavior in the context of couple separation trajectories. The work reproduces and explains methodology from the referenced statistical literature where the original analysis code was not publicly available.
+
+## Project Focus
+
+- Model count outcomes with excess zeros using a ZIGP regression structure
+- Estimate posterior distributions for regression and dispersion parameters with MCMC
+- Compare models using Bayesian criteria such as DIC and CPO
+- Evaluate case influence with Kullback-Leibler divergence diagnostics
+- Present the statistical methodology and empirical findings in a reproducible R Markdown report
+
+## Repository Files
+
+- `ZIGP-project.Rmd` - Main report and analysis source
+- `data.txt` - Data used by the report
+
+The standalone `ZIGP-project.R` script was removed so the R Markdown report is the single source for the written analysis and code.
+
+## How to Run
+
+Open `ZIGP-project.Rmd` in RStudio and knit it to PDF. The report reads `data.txt` from the same repository folder:
+
+```r
+df = read.table("data.txt", header = TRUE)
+```
+
+Required R packages include:
+
+```r
+install.packages(c("mvtnorm", "HDInterval", "knitr", "rmarkdown"))
+```
+
+## Portfolio Summary
+
+This project demonstrates custom Bayesian computation rather than use of a prebuilt ZIGP modeling function. The core technical work includes deriving the likelihood, implementing Metropolis updates, summarizing posterior estimates, comparing candidate models, and calculating influence diagnostics for individual observations.
